@@ -5,7 +5,7 @@ Its a tool for watching grate bug bounty platforms if any scope is added into pr
 
 ## Installation
 ```
-git clone 
+git clone https://github.com/mhossein1631/watch_scope.git
 ```
 
 ## Recommended Python Version:
