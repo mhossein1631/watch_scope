@@ -12,13 +12,13 @@ def check_datas(file1:str, file2:str, platform:str):
         print("No edit \n")
     else:
         print(f"{platform}: \n")
+        discord_data(f"**{platform}**")
         extra_lines = file2_lines.difference(file1_lines)
         for line in extra_lines:
             print(line.strip())
             f = open(file1, "a")
             f.write(f"{line.strip()}\n")
             f.close()
-            discord_data(platform)
             discord_data(line.strip())
 def get_response_hackerone():
     url = "https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/hackerone.json"
