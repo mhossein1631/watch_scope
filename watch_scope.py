@@ -29,7 +29,7 @@ def get_response_hackerone():
             for scope in obj['relationships']['structured_scopes']['data']:
                 if scope['attributes']['asset_type'] == 'URL' and scope['attributes']['eligible_for_bounty'] == True and \
                         scope['attributes']['eligible_for_submission'] == True:
-                    f = open("temp-ho.txt", "a")
+                    f = open("platforms/temp-ho.txt", "a")
                     f.write(f"{scope['attributes']['asset_identifier']}\n")
                     f.close()
 #get_response_hackerone()
@@ -51,7 +51,7 @@ def get_response_bugcrowd():
                         final2 = str(final).replace('\'', '')
                         if final2.startswith("b"):
                             final2 = final2[1:]
-                        f = open("temp-bg.txt", "a")
+                        f = open("platforms/temp-bg.txt", "a")
                         f.write(f"{final2}\n")
                         f.close()
     else:
@@ -68,7 +68,7 @@ def get_response_intigrity():
         for obj in data:
             for scope in obj['domains']:
                 if scope['type'] == 1:
-                    f = open("temp-in.txt", "a")
+                    f = open("platforms/platforms/temp-in.txt", "a")
                     f.write(f"{scope['endpoint']}\n")
                     f.close()
 #get_response_intigrity()
@@ -81,7 +81,7 @@ def get_response_yeswehack():
         for obj in data:
             for scope in obj['scopes']:
                 if scope['scope_type'] == 'web-application':
-                    f = open("temp-ywh.txt", "a")
+                    f = open("platforms/temp-ywh.txt", "a")
                     f.write(f"{scope['scope']}\n")
                     f.close()
 #get_response_yeswehack()
