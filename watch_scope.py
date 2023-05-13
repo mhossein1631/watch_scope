@@ -15,11 +15,11 @@ def check_datas(file1:str, file2:str, platform:str):
         discord_data(f"**{platform}**")
         extra_lines = file2_lines.difference(file1_lines)
         for line in extra_lines:
-            print(line.strip())
             f = open(file1, "a")
             f.write(f"{line.strip()}\n")
             f.close()
             discord_data(line.strip())
+         
 def get_response_hackerone():
     url = "https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/hackerone.json"
     response = requests.get(url)
@@ -68,7 +68,7 @@ def get_response_intigrity():
         for obj in data:
             for scope in obj['domains']:
                 if scope['type'] == 1:
-                    f = open("platforms/platforms/temp-in.txt", "a")
+                    f = open("platforms/temp-in.txt", "a")
                     f.write(f"{scope['endpoint']}\n")
                     f.close()
 #get_response_intigrity()
